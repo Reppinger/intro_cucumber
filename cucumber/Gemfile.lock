@@ -29,6 +29,7 @@ GEM
     faker (1.9.3)
       i18n (>= 0.7)
     ffi (1.10.0)
+    ffi (1.10.0-x64-mingw32)
     gherkin (5.1.0)
     i18n (1.2.0)
       concurrent-ruby (~> 1.0)
@@ -66,6 +67,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   cucumber
@@ -75,4 +77,4 @@ DEPENDENCIES
   rspec
 
 BUNDLED WITH
-   1.16.6
+   1.17.2

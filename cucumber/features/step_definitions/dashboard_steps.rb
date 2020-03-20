@@ -1,9 +1,17 @@
-When(/^The Tour of Heros dashboard is displayed$/) do
+When(/^the Tour of Heroes dashboard is displayed$/) do
   visit(DashboardPage)
 end
 
-Then(/^the application name "([^"]*)" is displayed$/) do |expected_name|
-  on(DashboardPage) do |page|
-    expect(page.name).to eq expected_name
-  end
+When(/^I view the hero details for "([^"]*)"$/) do |hero_name|
+  visit(DashboardPage).view_details_for(hero_name)
+end
+
+When(/^I request the list of heroes from the Dashboard$/) do
+  visit(DashboardPage).show_all_heroes
+end
+
+Then(/^the Tour of Heroes dashboard should be displayed$/) do
+  on(DashboardPage) { |page|
+    expect(page.name).to eq 'Tour of Heroes'
+  }
 end

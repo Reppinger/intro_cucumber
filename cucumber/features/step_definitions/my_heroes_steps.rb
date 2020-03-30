@@ -15,3 +15,8 @@ end
 Then(/^I use the menu to return to the Dashboard$/) do
   on(MyHeroesPage).go_to_dashboard
 end
+
+Then(/^I should not see "([^"]*)" on the list$/) do |hero_name|
+  hero_found = on(MyHeroesPage).has_hero?(hero_name)
+  expect(hero_found).to eq false
+end

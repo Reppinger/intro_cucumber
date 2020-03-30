@@ -6,8 +6,12 @@ class MyHeroesPage
   link(:go_to_dashboard, text: 'Dashboard')
 
   ul(:hero_container, class: 'heroes')
-  links(:hero) do |page|   # , xpath: '//app-heroes//a')
+  links(:hero, xpath: '//app-heroes//a') do |page|
     page.hero_container_element.links
+  end
+
+  def has_hero?(hero_name)
+    find_hero_link(hero_name) != nil
   end
 
   def view_details_for(hero_name)

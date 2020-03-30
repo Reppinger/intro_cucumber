@@ -7,14 +7,9 @@ Feature: Heroes dashboard
     When I request the list of heroes from the Dashboard
     Then the list of heroes should be displayed
 
-  Scenario Outline: A hero's details can be displayed
-    When I view the details for top hero "<hero_name>"
-    Then "<hero_name>" details should be displayed
-    Examples:
-      | hero_name |
-      | Celeritas |
-      | Narco     |
-      | Magneta   |
+  Scenario: A hero's details can be displayed
+    When I view the details for top hero "Magneta"
+    Then "Magneta" details should be displayed
 
   Scenario: Dashboard button returns to main page
     When I request the list of heroes from the Dashboard

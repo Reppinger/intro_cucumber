@@ -12,5 +12,4 @@ Feature: Heroes list
     When I delete "Celeritas" from the list of heroes
     Then I should not see "Celeritas" on the list
 
-
   

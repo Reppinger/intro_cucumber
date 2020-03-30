@@ -15,3 +15,14 @@ Then(/^the Tour of Heroes dashboard should be displayed$/) do
     expect(page.name).to eq 'Tour of Heroes'
   }
 end
+
+When(/^I search for "([^"]*)" from the Heroes dashboard$/) do |search_text|
+  visit(DashboardPage).hero_search = search_text
+end
+
+
+Then(/^a search result of "([^"]*)" should appear$/) do |expected_search_result|
+  on(DashboardPage) do |page|
+    expect(page.search_results).to include(expected_search_result)
+  end
+end

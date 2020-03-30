@@ -7,12 +7,8 @@ Feature: Heroes dashboard
     When I request the list of heroes from the Dashboard
     Then the list of heroes should be displayed
 
-#  Scenario: A hero's details can be displayed
-#    When I view the hero details for "Celeritas"
-#    Then "Celeritas" details should be displayed
-
   Scenario Outline: A hero's details can be displayed
-    When I view the hero details for "<hero_name>"
+    When I view the details for top hero "<hero_name>"
     Then "<hero_name>" details should be displayed
     Examples:
       | hero_name |

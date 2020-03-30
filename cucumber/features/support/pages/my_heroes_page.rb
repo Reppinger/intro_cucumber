@@ -6,12 +6,24 @@ class MyHeroesPage
   link(:go_to_dashboard, text: 'Dashboard')
 
   ul(:hero_container, class: 'heroes')
-  links(:hero, xpath: '//app-heroes//a')
-  # buttons(:delete_hero, xpath: '//app-heroes//button')
+  links(:hero) do |page|   # , xpath: '//app-heroes//a')
+    page.hero_container_element.links
+  end
 
-  def delete_hero(hero_name)
-    hero_container_element.when_present
-    delete_link = self.hero_elements.find { |link| link.text.include? hero_name}.next_sibling
+  def view_details_for(hero_name)
+    hero_link = find_hero_link(hero_name)
+    hero_link.click
+  end
+
+  def delete(hero_name)
+    delete_link = find_hero_link(hero_name).next_sibling
     delete_link.click
+  end
+
+  private
+
+  def find_hero_link(hero_name)
+    hero_container_element.when_present
+    self.hero_elements.find { |link| link.text.include? hero_name }
   end
 end

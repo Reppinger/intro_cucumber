@@ -5,7 +5,7 @@ class DashboardPage
   h1(:name)
   link(:show_all_heroes, text: 'Heroes')
 
-  def view_details_for(hero_name)
+  def view_details_for_top_hero(hero_name)
     @browser.h4(text: hero_name).click
   end
 end

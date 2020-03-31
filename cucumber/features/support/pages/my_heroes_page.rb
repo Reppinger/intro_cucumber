@@ -6,7 +6,7 @@ class MyHeroesPage
   link(:go_to_dashboard, text: 'Dashboard')
 
   ul(:hero_container, class: 'heroes')
-  links(:hero, xpath: '//app-heroes//a') do |page|
+  links(:hero) do |page|
     page.hero_container_element.links
   end
 

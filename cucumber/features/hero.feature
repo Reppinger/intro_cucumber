@@ -6,7 +6,7 @@ Feature: A hero can be viewed and edited
   Scenario: Hero's name can be changed
     Given the details for hero "Celeritas" are displayed
     When I correct his name to be "Celery Toss"
-    And the Tour of Heroes dashboard is displayed
+    And I return from the details page to the Dashboard
     Then the following top heroes should be displayed:
       | hero_name   |
       | Celery Toss |

@@ -14,7 +14,6 @@ end
 
 Then(/^I use the menu to return to the Dashboard$/) do
   on(MyHeroesPage).go_to_dashboard
-  on(DashboardPage).wait_until_loaded
 end
 
 Then(/^I should not see "([^"]*)" on the list$/) do |hero_name|

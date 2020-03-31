@@ -2,7 +2,9 @@ class HeroDetailsPage
   include PageObject
   page_url "http://localhost:4200/detail/<%=params[:hero_id]%>"
 
-  h2(:name, xpath: '//app-hero-detail/div/h2')
+  h2(:name, xpath: '//app-hero-detail//h2')
+  link(:show_all_heroes, text: 'Heroes')
+
   text_field(:hero_name)
   button(:save, text: 'save')
 

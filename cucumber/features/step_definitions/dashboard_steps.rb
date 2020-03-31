@@ -28,7 +28,6 @@ end
 
 Then(/^the following top heroes should be displayed:$/) do |heroes_table|
   dashboard_page = on(DashboardPage)
-  sleep 10
   heroes_table.hashes.each do |hero_row|
     expect(dashboard_page.text).to include hero_row[:hero_name]
   end

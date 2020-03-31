@@ -7,4 +7,4 @@ class HeroDetailsPage
     name.upcase == "#{hero_name} Details".upcase
   end
 
-  end
+end

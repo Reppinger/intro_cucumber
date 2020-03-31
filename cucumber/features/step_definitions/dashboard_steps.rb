@@ -26,3 +26,10 @@ Then(/^a search result of "([^"]*)" should appear$/) do |expected_search_result|
     expect(page.search_results).to include(expected_search_result)
   end
 end
+
+Then(/^the following top heroes should be displayed:$/) do |heroes_table|
+  dashboard_page = on(DashboardPage)
+  heroes_table.hashes.each do |hero_row|
+    expect(dashboard_page.text).to include hero_row[:hero_name]
+  end
+end

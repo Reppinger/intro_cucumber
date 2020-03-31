@@ -11,8 +11,13 @@ Feature: Heroes dashboard
     When I view the details for top hero "Magneta"
     Then "Magneta" details should be displayed
 
-  Scenario: Dashboard button returns to main page
-    When I request the list of heroes from the Dashboard
+  Scenario: Deleting a top hero updates Top Heroes
+    When I delete "Celeritas" from the list of heroes
     And I use the menu to return to the Dashboard
-    Then the Tour of Heroes dashboard should be displayed
+    Then the following top heroes should be displayed:
+      | hero_name |
+      | Narco     |
+      | Bombasto  |
+      | Magneta   |
+      | RubberMan |
 

@@ -3,10 +3,7 @@ Feature: A hero can be viewed and edited
   I want to manage the details of a hero
   So that I can keep the hero's information correct
 
-  Scenario: Hero's name can be changed
+  Scenario: Hero's name on details page synchronizes with hero name textbox
     Given the details for hero "Celeritas" are displayed
-    When I correct his name to be "Celery Toss"
-    And I return from the details page to the Dashboard
-    Then the following top heroes should be displayed:
-      | hero_name   |
-      | Celery Toss |
+    When I correct the hero's name to be "Celery Toss" without saving
+    Then "Celery Toss" details should be displayed

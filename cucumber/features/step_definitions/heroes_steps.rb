@@ -9,9 +9,6 @@ Given(/^the details for hero "([^"]*)" are displayed$/) do |hero_name|
   visit(HeroDetailsPage, using_params: {hero_id: hero_id})
 end
 
-When(/^I correct his name to be "([^"]*)"$/) do |new_hero_name|
-  on(HeroDetailsPage) do |page|
-    page.hero_name = new_hero_name
-    page.save
-  end
+When(/^I correct the hero's name to be "([^"]*)" without saving$/) do |new_hero_name|
+  on(HeroDetailsPage).hero_name = new_hero_name
 end

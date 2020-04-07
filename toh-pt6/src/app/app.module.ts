@@ -28,6 +28,8 @@ import { MessagesComponent }    from './messages/messages.component';
     // HttpClientInMemoryWebApiModule.forRoot(
     //   InMemoryDataService, { dataEncapsulation: false }
     // )
+
+    //server.js returns data from SQL Server TourOfHeroes DB
   ],
   declarations: [
     AppComponent,

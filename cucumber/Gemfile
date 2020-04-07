@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'cucumber'
+gem 'ffi' #Watir uses childprocess gem that no longer installs this
 gem 'rspec'
 gem 'rake'
 gem 'page-object', '~> 2.0'
+gem 'fig_newton'
+gem 'tiny_tds'
+gem 'activerecord-sqlserver-adapter'
+gem 'database_cleaner-active_record'
 gem 'data_magic'

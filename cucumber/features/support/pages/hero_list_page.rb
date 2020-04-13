@@ -4,4 +4,8 @@ class HeroListPage
 
   ul(:heroes, class: 'heroes')
 
+  def page_initialize
+    # wait_until( heroes_element.items > 0)
+  end
+
 end

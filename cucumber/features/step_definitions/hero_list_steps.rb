@@ -1,5 +1,4 @@
 Given(/^the following heroes:$/) do |hero_table|
-  # table is a table.hashes.keys # => [:Name]
   hero_table.symbolic_hashes.each do |hero|
     create(:hero, hero)
   end

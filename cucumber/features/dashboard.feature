@@ -1,4 +1,3 @@
-@ignore
 Feature: Heroes dashboard
   As a hero worshipper
   I want a dashboard

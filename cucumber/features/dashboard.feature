@@ -18,4 +18,4 @@ Feature: Heroes dashboard
       | Name     |
       | RubyGirl |
       | Cukester |
-
+    

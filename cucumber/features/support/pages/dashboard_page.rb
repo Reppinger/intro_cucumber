@@ -1,6 +1,6 @@
 class DashboardPage
   include PageObject
-  page_url "http://localhost:4200/dashboard"
+  page_url "#{FigNewton.base_url}/dashboard"
 
   h1(:name)
   div(:top_hero_container, class: ['grid', 'grid-pad'])

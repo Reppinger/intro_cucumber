@@ -1,0 +1,8 @@
+base_url: http://localhost:4200
+
+database:
+  adapter: sqlserver
+  host: localhost
+  database: TourOfHeroes
+  username: hero_worshipper
+  password: Pa55word$

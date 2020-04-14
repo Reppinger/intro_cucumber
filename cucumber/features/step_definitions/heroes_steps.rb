@@ -4,7 +4,6 @@ Then(/^the list of heroes should be displayed$/) do
   }
 end
 
-
 Then(/^"([^"]*)" details should be displayed$/) do |hero_name|
   on(HeroDetailsPage) { |page|
     expect(page).to have_details_for hero_name
@@ -17,4 +16,10 @@ end
 
 When(/^I delete "([^"]*)" from the list of heroes$/) do |hero_name|
   visit(MyHeroesPage).delete_hero hero_name
+end
+
+Then(/^I should not see "([^"]*)" on the list$/) do |hero_name|
+  on(MyHeroesPage) do |page|
+    expect(page.text).to_not include(hero_name)
+  end
 end

@@ -23,7 +23,6 @@ Feature: Heroes list
       | Magneta           |
       | Celeritas         |
 
-
   Scenario: Dashboard button returns to main page
     When I request the list of heroes from the Dashboard
     And I use the menu to return to the Dashboard

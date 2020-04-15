@@ -3,6 +3,16 @@ Feature: Search for heroes by name
   I want to find a hero
   So that I can view that hero's details
 
+  Background: Arrange some heroes
+    Given the following heroes:
+      | Name      |
+      | Narco     |
+      | Bombasto  |
+      | Magneta   |
+      | Celeritas |
+      | Magma     |
+
+
   Scenario Outline: Find single hero by full or partial name, case insensitive
     When I search for "<search_text>" from the Heroes dashboard
     Then a search result of "<expected_result>" should appear

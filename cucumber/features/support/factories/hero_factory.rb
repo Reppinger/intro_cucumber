@@ -1,3 +1,5 @@
 FactoryBot.define do
-  factory :hero
+  factory :hero do
+    name { Faker::Superhero.name }
+  end
 end

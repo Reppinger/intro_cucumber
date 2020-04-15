@@ -3,9 +3,17 @@ Feature: Heroes dashboard
   I want a dashboard
   So that I can access information about heroes
 
-  Scenario: Heroes list can be displayed
-    When I request the list of heroes from the Dashboard
-    Then the list of heroes should be displayed
+  Scenario: Hero list displays heroes
+    Given the following heroes:
+      | Name     |
+      | RubyGirl |
+      | Cukester |
+    When I view the hero list
+    Then the hero list page should be displayed
+    And the following heroes should be displayed:
+      | Name     |
+      | RubyGirl |
+      | Cukester |
 
   Scenario: A hero's details can be displayed
     Given the following heroes:
@@ -33,14 +41,3 @@ Feature: Heroes dashboard
       | Magneta     |
       | SoonToBeTop |
 
-  Scenario: Hero list displays heroes
-    Given the following heroes:
-      | Name     |
-      | RubyGirl |
-      | Cukester |
-    When I view the hero list
-    Then the following heroes should be displayed:
-      | Name     |
-      | RubyGirl |
-      | Cukester |
-    

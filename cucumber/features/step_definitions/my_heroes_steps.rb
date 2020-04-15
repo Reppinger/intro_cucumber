@@ -6,7 +6,7 @@ When(/^I delete "([^"]*)" from the list of heroes$/) do |hero_name|
   visit(MyHeroesPage).delete hero_name
 end
 
-Then(/^the list of heroes should be displayed$/) do
+Then(/^the hero list page should be displayed$/) do
   on(MyHeroesPage) { |page|
     expect(page.name).to eq 'My Heroes'
   }

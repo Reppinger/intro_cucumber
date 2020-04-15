@@ -23,15 +23,15 @@ Feature: Heroes dashboard
       | Bombasto          |
       | Magneta           |
       | Celeritas         |
-      | RubberMan         |
+      | SoonToBeTop       |
     When I delete "Celeritas" from the list of heroes
     And I use the menu to return to the Dashboard
     Then the following top heroes should be displayed:
-      | hero_name |
-      | Narco     |
-      | Bombasto  |
-      | Magneta   |
-      | RubberMan |
+      | hero_name   |
+      | Narco       |
+      | Bombasto    |
+      | Magneta     |
+      | SoonToBeTop |
 
   Scenario: Hero list displays heroes
     Given the following heroes:

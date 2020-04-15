@@ -39,6 +39,15 @@ app.get('/api/heroes/:heroId', function (req, res) {
         });
     });
 });
+app.delete('/api/heroes/:heroId', function (req, res) {
+    sql.connect(config, function (err) {
+        if (err) console.log(err);
+        var request = new sql.Request();
+        request.query('DELETE from Heroes where heroId=' + req.params['heroId'], function (err, recordset) {
+            if (err) console.log(err)
+        });
+    });
+});
 
 var server = app.listen(5000, function () {
     console.log('Server is running..');

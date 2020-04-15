@@ -8,10 +8,22 @@ Feature: Heroes dashboard
     Then the list of heroes should be displayed
 
   Scenario: A hero's details can be displayed
+    Given the following heroes:
+      | Name    |
+      | Narco   |
+      | Magneta |
     When I view the details for top hero "Magneta"
     Then "Magneta" details should be displayed
 
   Scenario: Deleting a top hero updates Top Heroes
+    Given the following heroes:
+      | Name              |
+      | FirstIsNotTopHero |
+      | Narco             |
+      | Bombasto          |
+      | Magneta           |
+      | Celeritas         |
+      | RubberMan         |
     When I delete "Celeritas" from the list of heroes
     And I use the menu to return to the Dashboard
     Then the following top heroes should be displayed:

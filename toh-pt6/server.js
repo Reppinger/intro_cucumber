@@ -1,35 +1,40 @@
 var express = require('express');
 var app = express();
 var cors = require('cors');
+var sql = require("mssql");
 
 app.use(cors());
 
+var config = {
+    user: 'hero_worshipper',
+    password: 'Pa55word$',
+    server: 'localhost',
+    database: 'TourOfHeroes'
+};
+
+
 app.get('/api/heroes', function (req, res) {
-
-    var sql = require("mssql");
-
-    // config for your database
-    var config = {
-        user: 'hero_worshipper',
-        password: 'Pa55word$',
-        server: 'localhost',
-        database: 'TourOfHeroes'
-    };
-
-    // connect to your database
     sql.connect(config, function (err) {
-
         if (err) console.log(err);
-
-        // create Request object
         var request = new sql.Request();
 
-        // query to the database and get the records
         request.query('select * from Heroes', function (err, recordset) {
-
             if (err) console.log(err)
             let heroes = buildHeroes(recordset);
             res.send(heroes);
+        });
+    });
+});
+
+app.get('/api/heroes/:heroId', function (req, res) {
+    sql.connect(config, function (err) {
+        if (err) console.log(err);
+        var request = new sql.Request();
+        request.query('select * from Heroes where heroId=' + req.params['heroId'], function (err, recordset) {
+
+            if (err) console.log(err)
+            let hero = buildHero(recordset);
+            res.send(hero);
 
         });
     });
@@ -59,3 +64,8 @@ function buildHeroes(recordset) {
     });
     return heroes;
 }
+function buildHero(recordset) {
+    let hero = recordset.recordset[0];
+    return { id: hero.HeroId, name: hero.Name };
+}
+
